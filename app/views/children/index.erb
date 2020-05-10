@@ -1,1 +1,5 @@
-<h1>Index for <%=@user.id%></h1>
+<h1>Children</h1>
+<%current_user.children.each do |child|%>
+   <%="#{child.last_name}, #{child.first_name}"%>
+   <br>
+<%end%>

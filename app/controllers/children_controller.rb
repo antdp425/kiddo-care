@@ -2,7 +2,6 @@ class ChildrenController < ApplicationController
 
    get '/children' do
       if logged_in?
-         @user = current_user
          erb :'children/index'
       else
          redirect '/'
@@ -18,7 +17,6 @@ class ChildrenController < ApplicationController
    end
 
    post '/children' do
-      binding.pry
       child = current_user.children.new(params)
       if child.save
          redirect "/children/#{child.id}"
