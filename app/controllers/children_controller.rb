@@ -10,7 +10,6 @@ class ChildrenController < ApplicationController
    end
 
    get '/children/new' do
-      binding.pry
       if logged_in?
          erb :'children/new'
       else
@@ -19,6 +18,7 @@ class ChildrenController < ApplicationController
    end
 
    post '/children' do
+      binding.pry
       child = current_user.children.new(params)
       if child.save
          redirect "/children/#{child.id}"
@@ -29,7 +29,12 @@ class ChildrenController < ApplicationController
 
    get '/children/:id' do
       if logged_in?
-         erb :'children/show'
+         user = current_user
+         if user.children.find_by(id: params[:id])
+            erb :'children/show'
+         else
+            redirect "/children"
+         end
       else
          redirect '/'
       end
