@@ -1,5 +1,7 @@
 <h1>Children</h1>
 <%current_user.children.each do |child|%>
-   <%="#{child.last_name}, #{child.first_name}"%>
+   <a href="/children/<%=child.id%>">
+   <%="#{child.last_name.capitalize}, #{child.first_name.capitalize}"%>
+   </a>
    <br>
 <%end%>
