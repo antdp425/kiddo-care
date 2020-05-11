@@ -60,4 +60,14 @@ class ChildrenController < ApplicationController
       end
    end
 
+   delete '/children/:id' do
+      child = current_user.children.find_by(id: params[:id])
+      if child
+         child.delete
+         redirect '/children'
+      else
+         redirect '/children'
+      end
+   end
+
 end

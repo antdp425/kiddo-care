@@ -4,3 +4,8 @@
 <span><%=@child.contact_phone%></p>
 <span><%=@child.contact_email%></p>
 <span><%=@child.notes%></p>
+
+<form method="POST" action="/children/<%=@child.id%>">
+   <input type="hidden" name="_method" value="delete">
+   <input type="submit" value="Delete">
+</form>
