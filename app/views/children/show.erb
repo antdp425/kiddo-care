@@ -5,6 +5,11 @@
 <span><%=@child.contact_email%></p>
 <span><%=@child.notes%></p>
 
+
+<form method="GET" action="/children/<%=@child.id%>/edit">
+   <input type="submit" value="Edit">
+</form>
+
 <form method="POST" action="/children/<%=@child.id%>">
    <input type="hidden" name="_method" value="delete">
    <input type="submit" value="Delete">
