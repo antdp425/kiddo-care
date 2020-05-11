@@ -42,34 +42,37 @@ class EmployeesController < ApplicationController
       end
    end
 
-   # get '/employees/:id/edit' do
-   #    if logged_in?
-   #       @employee = current_user.employees.find_by(id: params[:id])
-   #       if @employee
-   #          erb :'employees/edit'
-   #       else
-   #          redirect "/employees"
-   #       end
-   #    else
-   #       redirect '/'
-   #    end
-   # end
+   get '/employees/:id/edit' do
+      if logged_in?
+         @employee = current_user.employees.find_by(id: params[:id])
+         if @employee
+            erb :'employees/edit'
+         else
+            redirect "/employees"
+         end
+      else
+         redirect '/'
+      end
+   end
 
-   # patch '/employees/:id' do
-   #    if logged_in?
-   #       if employee = current_user.employees.find_by(id: params[:id])
-   #          if employee.update(params.except(:id, :_method))
-   #             redirect "/employees/#{employee.id}"
-   #          else
-   #             redirect "/employees/#{employee.id}/edit"
-   #          end
-   #       else
-   #          redirect '/employees'
-   #       end
-   #    else
-   #       redirect '/'
-   #    end
-   # end
+   patch '/employees/:id' do
+      binding.pry
+      if logged_in?
+         if employee = current_user.employees.find_by(id: params[:id])
+            employee.background_check = params[:background_check]
+            employee.cpr_certified = params[:background_check]
+            if employee.update(params.except(:id, :_method, :background_check, :cpr_certified))
+               redirect "/employees/#{employee.id}"
+            else
+               redirect "/employees/#{employee.id}/edit"
+            end
+         else
+            redirect '/employees'
+         end
+      else
+         redirect '/'
+      end
+   end
 
    # delete '/employees/:id' do
    #    if logged_in?

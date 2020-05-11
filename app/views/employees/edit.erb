@@ -1,0 +1,37 @@
+<h1>Edit Employee</h1>
+   <a href="/dashboard"><button>Dashboard</button></a>
+   <a href="/children">Children</a>
+   <a href="/logout"><button>Log Out</button></a>
+   <br>
+   <br>
+<form method="POST" action="/employees/<%=@employee.id%>">
+   <input type="hidden" id="hidden" name="_method" value="patch">
+   <label>First Name:<input type="text" name="first_name" value="<%=@employee.first_name%>"></label>
+   <br>
+   <label>Last Name:<input type="text" name="last_name" value="<%=@employee.last_name%>"></label>
+   <br>
+   <label>Contact Phone:
+      <input type="text" maxlength="10" name="phone" value="<%=@employee.phone%>">
+   </label>
+   <br>
+   <label>Contact Email:
+      <input type="email" name="email" value="<%=@employee.email%>">
+   </label>
+   <br>
+
+   <%if @employee.background_check == true%>
+   <input type="checkbox" id="background_check" name="background_check" value="true" checked>
+   <%else%>
+   <input type="checkbox" id="background_check" name="background_check" value="true">
+   <%end%>
+   <label for="background_check">Background Check</label>
+
+   <%if @employee.cpr_certified == true%>
+   <input type="checkbox" id="cpr_certified" name="cpr_certified" value="true" checked>
+   <%else%>
+   <input type="checkbox" id="cpr_certified" name="cpr_certified" value="true">
+   <%end%>
+   <label for="cpr_certified">CPR Certified</label>
+   <br>
+   <input type="submit">
+</form>
