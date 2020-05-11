@@ -57,11 +57,14 @@ class ChildrenController < ApplicationController
 
    patch '/children/:id' do
       if logged_in?
-         child = current_user.children.find_by(id: params[:id])
-         if child.update(params.except(:id, :_method))
-            redirect "/children/#{child.id}"
+         if child = current_user.children.find_by(id: params[:id])
+            if child.update(params.except(:id, :_method))
+               redirect "/children/#{child.id}"
+            else
+               redirect "/children/#{child.id}/edit"
+            end
          else
-            redirect "/children/#{child.id}/edit"
+            redirect '/children'
          end
       else
          redirect '/'
@@ -70,10 +73,13 @@ class ChildrenController < ApplicationController
 
    delete '/children/:id' do
       if logged_in?
-         child = current_user.children.find_by(id: params[:id])
-         if child
-            child.destroy
-            redirect '/children'
+         if child = current_user.children.find_by(id: params[:id])
+            if child
+               child.destroy
+               redirect '/children'
+            else
+               redirect '/children'
+            end
          end
       else
          redirect '/'

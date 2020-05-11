@@ -2,6 +2,14 @@
 <%current_user.children.each do |child|%>
    <a href="/children/<%=child.id%>">
    <%="#{child.last_name.capitalize}, #{child.first_name.capitalize}"%>
-   </a>
+   </a> 
+   <form method="GET" action="/children/<%=child.id%>/edit">
+   <input type="submit" value="Edit">
+</form>
+
+<form method="POST" action="/children/<%=child.id%>">
+   <input type="hidden" name="_method" value="delete">
+   <input type="submit" value="Delete">
+</form>
    <br>
 <%end%>
