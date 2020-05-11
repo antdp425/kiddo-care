@@ -1,0 +1,19 @@
+<h1>Employee</h1>
+   <a href="/dashboard"><button>Dashboard</button></a>
+   <a href="/children">Children</a>
+   <a href="/logout"><button>Log Out</button></a>
+   <br>
+   <br>
+<h3><%="#{@employee.first_name}, #{@employee.last_name}"%></h3>
+<p><%=@employee.email%></p>
+<p><%=@employee.phone%></p>
+
+
+<form method="GET" action="/employee/<%=@employee.id%>/edit">
+   <input type="submit" value="Edit">
+</form>
+
+<form method="POST" action="/employees/<%=@employee.id%>">
+   <input type="hidden" name="_method" value="delete">
+   <input type="submit" value="Delete">
+</form>

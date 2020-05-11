@@ -1,0 +1,22 @@
+<h1>Employees</h1>
+   <a href="/dashboard"><button>Dashboard</button></a>
+   <a href="/children/new"><button>Add Child</button></a>
+   <a href="/logout"><button>Log Out</button></a>
+   <br>
+   <br>
+
+<%current_user.employees.each do |employee|%>
+   <a href="/employees/<%=employee.id%>">
+   <%="#{employee.last_name.capitalize}, #{employee.first_name.capitalize}"%>
+   </a> 
+
+<form method="GET" action="/employees/<%=employee.id%>/edit">
+   <input type="submit" value="Edit">
+</form>
+
+<form method="POST" action="/employees/<%=employee.id%>">
+   <input type="hidden" name="_method" value="delete">
+   <input type="submit" value="Delete">
+</form>
+   <br>
+<%end%>
