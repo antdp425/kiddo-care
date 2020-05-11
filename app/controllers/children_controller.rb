@@ -50,4 +50,14 @@ class ChildrenController < ApplicationController
          redirect '/'
       end
    end
+
+   patch '/children/:id' do
+      child = current_user.children.find_by(id: params[:id])
+      if child.update(params.except(:id, :_method))
+         redirect "/children/#{child.id}"
+      else
+         redirect "/children/#{child.id}/edit"
+      end
+   end
+
 end

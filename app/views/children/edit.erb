@@ -1,1 +1,26 @@
 <h1>Edit Child</h1>
+
+<form method="POST" action="/children/<%=@child.id%>">
+   <input type="hidden" id="hidden" name="_method" value="patch">
+   <label for="first_name">First Name:
+      <input type="text" name="first_name" value="<%=@child.first_name%>">
+   </label>
+   <br>
+   <label for="last_name">Last Name:
+      <input type="text" name="last_name" value="<%=@child.last_name%>">
+   </label>
+   <br>
+   <label for="contact_phone">Contact Phone:
+      <input type="text" maxlength="10" name="contact_phone" value="<%=@child.contact_phone%>">
+   </label>
+   <br>
+   <label for="contact_email">Contact Email:
+      <input type="email" name="contact_email" value="<%=@child.contact_email%>">
+   </label>
+   <br>
+   <label for="notes">Notes:
+      <textarea type="text" name="notes" value="<%=@child.notes%>"></textarea>
+   </label>
+   <br>
+   <input type="submit">
+</form>
