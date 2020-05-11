@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200510062652) do
+ActiveRecord::Schema.define(version: 20200511182001) do
 
   create_table "children", force: :cascade do |t|
     t.string  "first_name"
@@ -19,6 +19,16 @@ ActiveRecord::Schema.define(version: 20200510062652) do
     t.string  "contact_phone"
     t.string  "contact_email"
     t.text    "notes"
+    t.integer "user_id"
+  end
+
+  create_table "employees", force: :cascade do |t|
+    t.string  "first_name"
+    t.string  "last_name"
+    t.string  "phone"
+    t.string  "email"
+    t.boolean "background_check"
+    t.boolean "cpr_certified"
     t.integer "user_id"
   end
 
