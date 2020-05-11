@@ -2,6 +2,7 @@ class UsersController < ApplicationController
    
    get '/dashboard' do
       if logged_in?
+         @time = Time.new.strftime("Today is %A, %B %d, %Y")
          erb :"users/dashboard"
       else
          redirect '/'
