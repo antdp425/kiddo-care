@@ -37,4 +37,17 @@ class ChildrenController < ApplicationController
          redirect '/'
       end
    end
+
+   get '/children/:id/edit' do
+      if logged_in?
+         @child = current_user.children.find_by(id: params[:id])
+         if @child
+            erb :'children/edit'
+         else
+            redirect "/children"
+         end
+      else
+         redirect '/'
+      end
+   end
 end
