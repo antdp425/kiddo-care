@@ -5,12 +5,15 @@
 <p><%=@child.contact_email%></p>
 <p><%=@child.notes%></p>
 
+<div class="row">
+   <div class="col manage-buttons">
+      <form method="GET" action="/children/<%=@child.id%>/edit">
+         <input type="submit" value="Edit">
+      </form>
 
-<form method="GET" action="/children/<%=@child.id%>/edit">
-   <input type="submit" value="Edit">
-</form>
-
-<form method="POST" action="/children/<%=@child.id%>">
-   <input type="hidden" name="_method" value="delete">
-   <input type="submit" value="Delete">
-</form>
+      <form method="POST" action="/children/<%=@child.id%>">
+         <input type="hidden" name="_method" value="delete">
+         <input type="submit" value="Delete">
+      </form>
+   </div>
+</div>

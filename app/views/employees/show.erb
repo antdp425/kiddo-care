@@ -4,12 +4,16 @@
 <p><%=@employee.email%></p>
 <p><%=@employee.phone%></p>
 
+<div class="row">
+   <div class="col manage-buttons">
+      <form method="GET" action="/employees/<%=@employee.id%>/edit">
+         <input type="submit" value="Edit">
+      </form>
+      <form method="POST" action="/employees/<%=@employee.id%>">
+         <input type="hidden" name="_method" value="delete">
+         <input type="submit" value="Delete">
+      </form>
+   </div>
+</div>
 
-<form method="GET" action="/employees/<%=@employee.id%>/edit">
-   <input type="submit" value="Edit">
-</form>
 
-<form method="POST" action="/employees/<%=@employee.id%>">
-   <input type="hidden" name="_method" value="delete">
-   <input type="submit" value="Delete">
-</form>
