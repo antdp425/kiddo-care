@@ -3,8 +3,8 @@ class UsersController < ApplicationController
    get '/dashboard' do
       if logged_in?
          @time = Time.new.strftime("Today is %A, %B %d, %Y")
-         @roster = current_user.children.order("last_name ASC")
-         @staff = current_user.employees.order("last_name ASC")
+         @roster = children.order("last_name ASC")
+         @staff = employees.order("last_name ASC")
          erb :"users/dashboard"
       else
          redirect '/'
