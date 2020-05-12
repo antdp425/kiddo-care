@@ -22,7 +22,8 @@ class EmployeesController < ApplicationController
          if employee.save
             redirect "/employees/#{employee.id}"
          else
-            redirect '/employees/new'
+            @errors = employee.errors.full_messages
+            erb :'employees/new'
          end
       else
          redirect '/'
