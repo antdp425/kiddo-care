@@ -1,9 +1,11 @@
 .nav{
   background-color: midnightblue;
-  color: gold;
-  position: relative;
   height: 100vh;
   padding-top: 10px;
+}
+
+.nav-brand{
+  color: gold;
 }
 
 .nav-link a{
