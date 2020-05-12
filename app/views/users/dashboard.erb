@@ -4,18 +4,22 @@
    <hr>
    <div class="row">
       <div class="col text-center alerts">
-         <div class="alert alert-danger" role="alert">
-            <%@staff.each do |s|%>
-               <%if (s.background_check || s.cpr_certified) != true %>
-                     <div class="row">
-                        <div class="col">
-                           <%=s.last_name.capitalize%>,<%=s.first_name.capitalize%> is missing certifications.
-                           <a href="/employees/<%=s.id%>" class="btn btn-secondary">Manage</a>
-                        </div>
-                     </div>
-               <%end%>
-            <%end%>  
-         </div>
+         <%@staff.each do |s|%>
+            <%if (s.background_check || s.cpr_certified) != true %>
+               <%@count = true%>
+               <div class="row">
+                  <div class="col">
+                     <div class="alert alert-danger" role="alert">
+                     <%=s.last_name.capitalize%>,<%=s.first_name.capitalize%> is missing certifications.
+                     <a href="/employees/<%=s.id%>" class="btn-sm btn-secondary">Manage</a>
+                  </div>
+               </div>
+               </div>
+            <%end%>
+         <%end%>
+         <%if @count != true%>
+            <div class="alert alert-success" role="alert">Everything is good!</div>
+      <%end%>  
       </div>
    </div>
    <div class="row">

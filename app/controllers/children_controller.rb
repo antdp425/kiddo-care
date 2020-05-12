@@ -18,7 +18,7 @@ class ChildrenController < ApplicationController
 
    post '/children' do
       if logged_in?
-         child = current_user.children.new(params)
+         child = current_user.children.build(params)
          if child.save
             redirect "/children/#{child.id}"
          else

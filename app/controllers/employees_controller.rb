@@ -18,7 +18,7 @@ class EmployeesController < ApplicationController
 
    post '/employees' do
       if logged_in?
-         employee = current_user.employees.new(params)
+         employee = current_user.employees.build(params)
          if employee.save
             redirect "/employees/#{employee.id}"
          else
@@ -56,7 +56,6 @@ class EmployeesController < ApplicationController
    end
 
    patch '/employees/:id' do
-      binding.pry
       if logged_in?
          if employee = current_user.employees.find_by(id: params[:id])
             employee.background_check = params[:background_check]
