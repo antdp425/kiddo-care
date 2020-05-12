@@ -22,7 +22,8 @@ class ChildrenController < ApplicationController
          if child.save
             redirect "/children/#{child.id}"
          else
-            redirect '/children/new'
+            @errors = child.errors.full_messages
+            erb :'children/new'
          end
       else
          redirect '/'
