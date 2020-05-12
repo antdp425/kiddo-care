@@ -1,4 +1,31 @@
 <div>
-   <h1>Welcome, <%=current_user.first_name.capitalize%></h1>
-   <h2><%=@time%></h2>
+   <div class="text-center h1">Welcome, <%=current_user.first_name.capitalize%></div>
+   <div class="text-center h2"><%=@time%></div>
+   <br>
+   <div class="row">
+      <div class="col text-center alerts">
+         <div class="alert alert-warning" role="alert">
+         </div>
+      </div>
+   </div>
+   <div class="row">
+      <div class="col text-center">Roster
+      <%@roster.each do |r|%>
+            <div class="row">
+               <div class="col">
+                  <a href="/children/<%=r.id%>"><%=r.last_name.capitalize%>,<%=r.first_name.capitalize%></a>
+               </div>
+            </div>
+      <%end%>
+      </div>
+      <div class="col text-center">Staff
+      <%@staff.each do |s|%>
+            <div class="row">
+               <div class="col">
+                  <a href="/employees/<%=s.id%>"><%=s.last_name.capitalize%>,<%=s.first_name.capitalize%></a>
+               </div>
+            </div>
+      <%end%>
+      </div>
+   </div>
 </div>
