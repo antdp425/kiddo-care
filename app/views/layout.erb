@@ -23,13 +23,13 @@
           <div class="nav-link text-center">
             <a href="/dashboard">Home</a>
           </div>
+          <%if logged_in?%>
           <div class="nav-link text-center">
             <a href="/children">Children</a>
           </div>
           <div class="nav-link text-center">
             <a href="/employees">Employees</a>
           </div>
-          <%if logged_in?%>
             <div class="nav-link text-center">
               <a href="/logout" class="btn btn-outline-danger">Log Out</a>
             </div>
