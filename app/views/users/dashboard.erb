@@ -1,10 +1,20 @@
 <div>
    <div class="text-center h1">Welcome, <%=current_user.first_name.capitalize%></div>
    <div class="text-center h2"><%=@time%></div>
-   <br>
+   <hr>
    <div class="row">
       <div class="col text-center alerts">
-         <div class="alert alert-warning" role="alert">
+         <div class="alert alert-danger" role="alert">
+            <%@staff.each do |s|%>
+               <%if (s.background_check || s.cpr_certified) != true %>
+                     <div class="row">
+                        <div class="col">
+                           <%=s.last_name.capitalize%>,<%=s.first_name.capitalize%> is missing certifications.
+                           <a href="/employees/<%=s.id%>" class="btn btn-secondary">Manage</a>
+                        </div>
+                     </div>
+               <%end%>
+            <%end%>  
          </div>
       </div>
    </div>

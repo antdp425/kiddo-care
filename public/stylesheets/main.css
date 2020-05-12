@@ -1,3 +1,15 @@
+.content{
+  padding-top: 10px;
+}
+
+hr{
+  background: black;
+}
+
+.manage-buttons{
+      display: inline-flex;
+}
+
 .nav{
   background-color: midnightblue;
   height: 100vh;
@@ -13,10 +25,3 @@
   text-decoration: none;
 }
 
-.content{
-  padding-top: 10px;
-}
-
-.manage-buttons{
-  display: inline-flex;
-}
