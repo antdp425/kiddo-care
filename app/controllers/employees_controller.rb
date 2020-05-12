@@ -74,19 +74,19 @@ class EmployeesController < ApplicationController
       end
    end
 
-   # delete '/employees/:id' do
-   #    if logged_in?
-   #       if employee = current_user.employees.find_by(id: params[:id])
-   #          if employee
-   #             employee.destroy
-   #             redirect '/employees'
-   #          else
-   #             redirect '/employees'
-   #          end
-   #       end
-   #    else
-   #       redirect '/'
-   #    end
-   # end
+   delete '/employees/:id' do
+      if logged_in?
+         if employee = current_user.employees.find_by(id: params[:id])
+            if employee
+               employee.destroy
+               redirect '/employees'
+            else
+               redirect '/employees'
+            end
+         end
+      else
+         redirect '/'
+      end
+   end
 
 end
