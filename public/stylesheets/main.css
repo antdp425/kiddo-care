@@ -7,7 +7,7 @@ hr{
 }
 
 .manage-buttons{
-      display: inline-flex;
+  display: inline-flex;
 }
 
 .nav{
@@ -16,8 +16,9 @@ hr{
   padding-top: 10px;
 }
 
-.nav-brand{
+.nav-brand > a{
   color: gold;
+  text-decoration: none;
 }
 
 .nav-link a{

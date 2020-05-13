@@ -10,6 +10,7 @@
     <title>Kiddo Care</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="/stylesheets/main.css" />
   </head>
@@ -18,17 +19,17 @@
       <div class="row">
         <div class="col-2 nav sticky-top flex-column">
           <div class="nav-brand text-center h2">
-            kiddo.
+          <a href="/dashboard">kiddo.</a>
           </div>
           <div class="nav-link text-center">
-            <a href="/dashboard">Home</a>
+            <a href="/dashboard"><i class="las la-home la-lg"></i> Home</a>
           </div>
           <%if logged_in?%>
           <div class="nav-link text-center">
-            <a href="/children">Children</a>
+            <a href="/children"><i class="las la-child la-lg"></i> Children</a>
           </div>
           <div class="nav-link text-center">
-            <a href="/employees">Employees</a>
+            <a href="/employees"><i class="las la-briefcase la-lg"></i> Employees</a>
           </div>
             <div class="nav-link text-center">
               <a href="/logout" class="btn btn-outline-danger">Log Out</a>

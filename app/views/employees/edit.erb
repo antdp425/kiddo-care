@@ -1,11 +1,11 @@
 <h1>Edit Employee</h1>
    <br>
 
-<%if @errors %>
+<%if !@employee.errors.empty? %>
    <div class="alert alert-danger" role="alert">
       <h5 class="alert-heading">The following errors occurred:</h5>
       <hr>
-      <% @errors.each do |error|%>
+      <% @employee.errors.full_messages.each do |error|%>
       <li><%=error%></li>
    <%end%>
    </div>
