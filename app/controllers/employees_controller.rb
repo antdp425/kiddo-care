@@ -47,6 +47,8 @@ class EmployeesController < ApplicationController
       if logged_in?
          @employee = current_user.employees.find_by(id: params[:id])
          if @employee
+            @errors = session[:errors]
+            session[:errors] = nil
             erb :'employees/edit'
          else
             redirect "/employees"
@@ -64,6 +66,7 @@ class EmployeesController < ApplicationController
             if employee.update(params.except(:id, :_method, :background_check, :cpr_certified))
                redirect "/employees/#{employee.id}"
             else
+               session[:errors] = employee.errors.full_messages
                redirect "/employees/#{employee.id}/edit"
             end
          else
