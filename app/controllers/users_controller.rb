@@ -25,7 +25,8 @@ class UsersController < ApplicationController
          session[:user_id] = user.id
          redirect '/dashboard'
       else
-         redirect '/signup'
+         @errors = user.errors.full_messages
+         erb :'users/signup'
       end
    end
 
