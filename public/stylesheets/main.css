@@ -2,6 +2,10 @@
   padding-top: 10px;
 }
 
+.index-row{
+  padding-bottom: 5px;
+}
+
 hr{
   background: black;
 }

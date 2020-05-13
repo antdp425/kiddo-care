@@ -1,20 +1,30 @@
-<h1>Employees</h1>
-   <a href="/employees/new"><button>Add Employee</button></a>
-   <br>
-   <br>
+<div class="row">
+   <div class="col-3 align-self-center">
+      <h1>Employees</h1>
+   </div>
+   <div class="col align-self-center">
+      <a href="/employees/new"><button class="btn btn-primary">Add Employee</button></a>
+   </div>
+</div>
+<br>
+<%current_user.employees.order("last_name DESC").each do |employee|%>
+<div class="row index-row">
+   <div class="col-3 align-self-center">
+         <a href="/employees/<%=employee.id%>">
+            <%="#{employee.last_name.capitalize}, #{employee.first_name.capitalize}"%>
+         </a>
+      </div> 
+      <div class="col align-self-center manage-buttons">
+         <form method="GET" action="/employees/<%=employee.id%>/edit">
+            <input type="submit" value="Edit" class="btn btn-success">
+         </form>
 
-<%current_user.employees.each do |employee|%>
-   <a href="/employees/<%=employee.id%>">
-   <%="#{employee.last_name.capitalize}, #{employee.first_name.capitalize}"%>
-   </a> 
+         <form method="POST" action="/employees/<%=employee.id%>">
+            <input type="hidden" name="_method" value="delete">
+            <input type="submit" value="Delete" class="btn btn-danger">
+         </form>
+      <br>
 
-<form method="GET" action="/employees/<%=employee.id%>/edit">
-   <input type="submit" value="Edit">
-</form>
-
-<form method="POST" action="/employees/<%=employee.id%>">
-   <input type="hidden" name="_method" value="delete">
-   <input type="submit" value="Delete">
-</form>
-   <br>
+   </div>
+</div>
 <%end%>
