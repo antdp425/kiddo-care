@@ -1,5 +1,16 @@
 <h1>Edit Child</h1>
    <br>
+
+<%if @errors %>
+   <div class="alert alert-danger" role="alert">
+      <h5 class="alert-heading">The following errors occurred:</h5>
+      <hr>
+      <% @errors.each do |error|%>
+      <li><%=error%></li>
+   <%end%>
+   </div>
+<%end%>
+
 <form method="POST" action="/children/<%=@child.id%>">
    <input type="hidden" id="hidden" name="_method" value="patch">
    <label>First Name:<input type="text" name="first_name" value="<%=@child.first_name%>"></label>

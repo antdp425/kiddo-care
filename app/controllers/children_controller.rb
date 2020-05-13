@@ -47,6 +47,8 @@ class ChildrenController < ApplicationController
       if logged_in?
          @child = current_user.children.find_by(id: params[:id])
          if @child
+            @errors = session[:errors]
+            session[:errors] = nil
             erb :'children/edit'
          else
             redirect "/children"
@@ -62,6 +64,7 @@ class ChildrenController < ApplicationController
             if child.update(params.except(:id, :_method))
                redirect "/children/#{child.id}"
             else
+               session[:errors] = child.errors.full_messages
                redirect "/children/#{child.id}/edit"
             end
          else
