@@ -1,8 +1,8 @@
 <h1>Employee</h1>
    <br>
-<h3><%="#{@employee.first_name}, #{@employee.last_name}"%></h3>
-<p><%=@employee.email%></p>
-<p><%=@employee.phone%></p>
+<h3><%="#{@employee.first_name.downcase.titleize} #{@employee.last_name.downcase.titleize}"%></h3>
+<p>Email: <%=@employee.email%></p>
+<p>Phone: <%=@employee.phone%></p>
 
 <div class="row">
    <div class="col manage-buttons">

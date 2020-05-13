@@ -1,8 +1,8 @@
 <h1>Child</h1>
    <br>
-<h3><%="#{@child.first_name}, #{@child.last_name}"%></h3>
-<p><%=@child.contact_phone%></p>
-<p><%=@child.contact_email%></p>
+<h3><%="#{@child.first_name.downcase.titleize} #{@child.last_name.downcase.titleize}"%></h3>
+<p>Contact Phone: <%=@child.contact_phone%></p>
+<p>Contact Email: <%=@child.contact_email%></p>
 <p><%=@child.notes%></p>
 
 <div class="row">
