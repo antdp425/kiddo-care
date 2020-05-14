@@ -8,7 +8,7 @@
 </div>
 <br>
 
-<%current_user.employees.order("last_name DESC").each do |employee|%>
+<%current_user.employees.order("last_name ASC").each do |employee|%>
 <div class="row index-row">
    <div class="col-3 align-self-center">
          <a href="/employees/<%=employee.id%>">
