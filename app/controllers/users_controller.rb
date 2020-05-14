@@ -20,13 +20,12 @@ class UsersController < ApplicationController
    end
 
    post '/signup' do
-      binding.pry
       user = User.new(params)
       if user.save
          session[:user_id] = user.id
          redirect '/dashboard'
       else
-         @errors = user.errors.full_messages
+         @errors = user.errors.full_messages.uniq
          erb :'users/signup'
       end
    end

@@ -10,35 +10,39 @@
                <div class="row">
                   <div class="col">
                      <div class="alert alert-danger" role="alert">
-                     <%=s.last_name%>,<%=s.first_name%> is missing certifications.
-                     <a href="/employees/<%=s.id%>" class="btn-sm btn-secondary">Manage</a>
+                     <%=s.first_name.capitalize%> <%=s.last_name.capitalize%> is missing certifications.
+                     <a href="/employees/<%=s.id%>/edit" class="btn-sm btn-secondary">Manage</a>
                   </div>
                </div>
                </div>
             <%end%>
          <%end%>
          <%if @count != true%>
-            <div class="alert alert-success" role="alert">Everything is good!</div>
+            <div class="alert alert-success" role="alert">Everything is good! 🎉</div>
       <%end%>  
       </div>
    </div>
    <div class="row">
+      <%if !@roster.empty?%>
       <div class="col text-center">Roster
-      <%@roster.each do |r|%>
-            <div class="row">
-               <div class="col">
-                  <a href="/children/<%=r.id%>"><%=r.last_name.capitalize%>,<%=r.first_name.capitalize%></a>
+         <%@roster.each do |r|%>
+               <div class="row">
+                  <div class="col">
+                     <a href="/children/<%=r.id%>"><%=r.last_name.capitalize%>,<%=r.first_name.capitalize%></a>
+                  </div>
                </div>
-            </div>
+         <%end%>
       <%end%>
       </div>
+      <%if !@staff.empty?%>
       <div class="col text-center">Staff
-      <%@staff.each do |s|%>
-            <div class="row">
-               <div class="col">
-                  <a href="/employees/<%=s.id%>"><%=s.last_name.capitalize%>,<%=s.first_name.capitalize%></a>
+         <%@staff.each do |s|%>
+               <div class="row">
+                  <div class="col">
+                     <a href="/employees/<%=s.id%>"><%=s.last_name.capitalize%>,<%=s.first_name.capitalize%></a>
+                  </div>
                </div>
-            </div>
+         <%end%>
       <%end%>
       </div>
    </div>
