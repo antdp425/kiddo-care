@@ -7,10 +7,17 @@
    </div>
 <%end%>
 
+
 <form method="POST" action="/login">
-   <label>Uername:<input type="text" name="username"></label>
-   <br>
-   <label>Password:<input type="password" name="password"></label>
-   <br>
-   <input type="submit">
+<div class="form-group form-row">
+  <label class="form-check-label">Uername:
+   <input class="form-control" type="text" name="username"></label>
+</div> 
+<div class="form-group form-row">
+  <label class="form-check-label">Password:
+   <input class="form-control" type="password" name="password"></label>
+</div>
+<div class="form-group form-row">
+   <button class="btn btn-primary" type="submit">Log In</button>
+   </div>
 </form>
