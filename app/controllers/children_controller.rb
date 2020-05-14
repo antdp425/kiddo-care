@@ -17,6 +17,7 @@ class ChildrenController < ApplicationController
    end
 
    post '/children' do
+      binding.pry
       if logged_in?
          child = current_user.children.build(params)
          if child.save
@@ -57,6 +58,7 @@ class ChildrenController < ApplicationController
    end
 
    patch '/children/:id' do
+      binding.pry
       if logged_in?
          if @child = current_user.children.find_by(id: params[:id])
             if @child.update(params.except(:id, :_method))

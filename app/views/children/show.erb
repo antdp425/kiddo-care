@@ -3,7 +3,9 @@
 <h3><%="#{@child.first_name.downcase.titleize} #{@child.last_name.downcase.titleize}"%></h3>
 <p>Contact Phone: <%=@child.contact_phone%></p>
 <p>Contact Email: <%=@child.contact_email%></p>
-<p><%=@child.notes%></p>
+<p>Notes:
+<br>
+<%=@child.notes%></p>
 
 <div class="row">
    <div class="col manage-buttons">
