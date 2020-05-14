@@ -1,9 +1,6 @@
 # Kiddo Care
 
 Kiddo Care provides:
- - access to basic information about all 20 teams in the English Premier League  
- - a quick look into a teams current position in the league table
- - a quick look at the full league table
 
 ## Getting Started
 
