@@ -24,6 +24,7 @@
           <div class="nav-link text-center">
             <a href="/dashboard"><i class="las la-home la-lg"></i> Home</a>
           </div>
+
           <%if logged_in?%>
           <div class="nav-link text-center">
             <a href="/children"><i class="las la-child la-lg"></i> Children</a>
@@ -36,6 +37,7 @@
             </div>
           <%end%>
         </div>
+        
       <div class="col content">
         <%=yield%>
       </div>
