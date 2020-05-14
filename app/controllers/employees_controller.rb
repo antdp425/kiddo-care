@@ -17,7 +17,6 @@ class EmployeesController < ApplicationController
    end
 
    post '/employees' do
-      binding.pry
       if logged_in?
          employee = current_user.employees.build(params)
          if employee.save
