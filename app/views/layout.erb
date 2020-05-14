@@ -21,25 +21,25 @@
           <div class="nav-brand text-center h2">
           <a href="/dashboard">kiddo.</a>
           </div>
-          <div class="nav-link text-center">
+          <div class="nav-link align-self-center">
             <a href="/dashboard"><i class="las la-home la-lg"></i> Home</a>
           </div>
 
           <%if logged_in?%>
-          <div class="nav-link text-center">
+          <div class="nav-link align-self-center">
             <a href="/children"><i class="las la-child la-lg"></i> Children</a>
           </div>
-          <div class="nav-link text-center">
+          <div class="nav-link align-self-center">
             <a href="/employees"><i class="las la-briefcase la-lg"></i> Employees</a>
           </div>
-            <div class="nav-link text-center">
+            <div class="nav-link align-self-center">
               <a href="/logout" class="btn btn-outline-danger">Log Out</a>
             </div>
             <%else%>
-          <div class="nav-link text-center">
+          <div class="nav-link align-self-center">
             <a href="/signup">Sign Up</a>
           </div>
-          <div class="nav-link text-center">
+          <div class="nav-link align-self-center">
             <a href="/login">Log In</a>
           </div>
           <%end%>
