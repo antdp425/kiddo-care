@@ -60,7 +60,7 @@ class EmployeesController < ApplicationController
       if logged_in?
          if @employee = current_user.employees.find_by(id: params[:id])
             @employee.background_check = params[:background_check]
-            @employee.cpr_certified = params[:background_check]
+            @employee.cpr_certified = params[:cpr_certified]
             if @employee.update(params.except(:id, :_method, :background_check, :cpr_certified))
                redirect "/employees/#{@employee.id}"
             else

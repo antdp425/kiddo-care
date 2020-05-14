@@ -2,11 +2,12 @@
    <div class="text-center h1">Welcome, <%=current_user.first_name.capitalize%></div>
    <div class="text-center h2"><%=@time%></div>
    <hr>
+
    <div class="row">
       <div class="col text-center alerts">
          <%@staff.each do |s|%>
-            <%if (s.background_check || s.cpr_certified) != true %>
-               <%@count = true%>
+            <%if (s.background_check == nil || s.cpr_certified == nil)%>
+             <%@missing_certs = true%>
                <div class="row">
                   <div class="col">
                      <div class="alert alert-danger" role="alert">
@@ -17,11 +18,12 @@
                </div>
             <%end%>
          <%end%>
-         <%if @count != true%>
+         <%if @missing_certs != true%>
             <div class="alert alert-success" role="alert">Everything is good! 🎉</div>
-      <%end%>  
+         <%end%>
       </div>
    </div>
+
    <div class="row">
       <%if !@roster.empty?%>
       <div class="col text-center">Roster
