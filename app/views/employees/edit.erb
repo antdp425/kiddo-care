@@ -6,58 +6,59 @@
       <h5 class="alert-heading">The following errors occurred:</h5>
       <hr>
       <% @employee.errors.full_messages.each do |error|%>
-      <li><%=error%></li>
-   <%end%>
+         <li><%=error%></li>
+      <%end%>
    </div>
 <%end%>
 
 
 <form method="POST" action="/employees/<%=@employee.id%>">
-<div class="form-group form-row">
-   <input type="hidden" id="hidden" name="_method" value="patch">
-   <label class="form-check-label">First Name:
-   <input class="form-control" type="text" name="first_name" value="<%=@employee.first_name%>"></label>
+   <div class="form-group form-row">
+      <input type="hidden" id="hidden" name="_method" value="patch">
+      <label class="form-check-label">First Name:
+      <input class="form-control" type="text" name="first_name" value="<%=@employee.first_name%>"></label>
    </div>
 
    <div class="form-group form-row">
-   <label class="form-check-label">Last Name:
-   <input class="form-control" type="text" name="last_name" value="<%=@employee.last_name%>"></label>
+      <label class="form-check-label">Last Name:
+      <input class="form-control" type="text" name="last_name" value="<%=@employee.last_name%>"></label>
    </div>
 
    <div class="form-group form-row">   
-   <label class="form-check-label">Contact Phone:
-      <input class="form-control" type="text" maxlength="10" name="phone" value="<%=@employee.phone%>">
-   </label>
+      <label class="form-check-label">Contact Phone:
+         <input class="form-control" type="text" maxlength="10" name="phone" value="<%=@employee.phone%>">
+      </label>
    </div>
 
-<div class="form-group form-row">
-   <label class="form-check-label">Contact Email:
-      <input class="form-control" type="email" name="email" value="<%=@employee.email%>">
-   </label>
+   <div class="form-group form-row">
+      <label class="form-check-label">Contact Email:
+         <input class="form-control" type="email" name="email" value="<%=@employee.email%>">
+      </label>
    </div>
 
    <%if @employee.background_check != nil%>
-   <div class="form-check form-check-inline">
-   <input class="form-check-input" type="checkbox" id="background_check" name="background_check" checked>
+      <div class="form-check form-check-inline">
+         <input class="form-check-input" type="checkbox" id="background_check" name="background_check" checked>
    <%else%>
-   <div class="form-check form-check-inline">
-   <input class="form-check-input" type="checkbox" id="background_check" name="background_check">
+      <div class="form-check form-check-inline">
+         <input class="form-check-input" type="checkbox" id="background_check" name="background_check">
    <%end%>
-   <label class="form-check-label" for="background_check">Background Check</label>
-   </div>
+   
+         <label class="form-check-label" for="background_check">Background Check</label>
+      </div>
 
    <%if @employee.cpr_certified != nil%>
-   <div class="form-check form-check-inline">
-   <input class="form-check-input" type="checkbox" id="cpr_certified" name="cpr_certified" checked>
+      <div class="form-check form-check-inline">
+         <input class="form-check-input" type="checkbox" id="cpr_certified" name="cpr_certified" checked>
    <%else%>
-   <div class="form-check form-check-inline">
-   <input class="form-check-input" type="checkbox" id="cpr_certified" name="cpr_certified">
+      <div class="form-check form-check-inline">
+         <input class="form-check-input" type="checkbox" id="cpr_certified" name="cpr_certified">
    <%end%>
-   <label class="form-check-label" for="cpr_certified">CPR Certified</label>
+      <label class="form-check-label" for="cpr_certified">CPR Certified</label>
    </div>
    <br>
    <br>
    <div class="form-group form-row">
-   <button type="submit" class="btn btn-primary">Submit</button>
+      <button type="submit" class="btn btn-primary">Submit</button>
    </div>
 </form>
