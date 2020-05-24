@@ -36,22 +36,22 @@
    </label>
    </div>
 
-   <%if @employee.background_check == true%>
+   <%if @employee.background_check != nil%>
    <div class="form-check form-check-inline">
-   <input class="form-check-input" type="checkbox" id="background_check" name="background_check" value="true" checked>
+   <input class="form-check-input" type="checkbox" id="background_check" name="background_check" checked>
    <%else%>
    <div class="form-check form-check-inline">
-   <input class="form-check-input" type="checkbox" id="background_check" name="background_check" value="true">
+   <input class="form-check-input" type="checkbox" id="background_check" name="background_check">
    <%end%>
    <label class="form-check-label" for="background_check">Background Check</label>
    </div>
 
-   <%if @employee.cpr_certified == true%>
+   <%if @employee.cpr_certified != nil%>
    <div class="form-check form-check-inline">
-   <input class="form-check-input" type="checkbox" id="cpr_certified" name="cpr_certified" value="true" checked>
+   <input class="form-check-input" type="checkbox" id="cpr_certified" name="cpr_certified" checked>
    <%else%>
    <div class="form-check form-check-inline">
-   <input class="form-check-input" type="checkbox" id="cpr_certified" name="cpr_certified" value="true">
+   <input class="form-check-input" type="checkbox" id="cpr_certified" name="cpr_certified">
    <%end%>
    <label class="form-check-label" for="cpr_certified">CPR Certified</label>
    </div>
