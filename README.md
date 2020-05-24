@@ -5,8 +5,10 @@ Kiddo Care is a Childcare Management Solution built on Sinatra that allows you t
 ## Getting Started
 
 1. Fork and clone this repo
-2. Once inside the app directory.. in terminal -- run: `bundle install`
-3. Type `shotgun` into terminal and navigate to the localhost url that it provides
+2. Open Terminal
+3. Navigate to the app directory
+4. Type `bundle install` into terminal
+5. Type `shotgun` into terminal and navigate to the localhost url that it provides
 
 ## Usage
 
