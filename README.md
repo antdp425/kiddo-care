@@ -9,7 +9,6 @@ Kiddo Care is a Childcare Management Solution built on Sinatra that allows you t
 3. Navigate to the app directory
 4. Type `bundle install` into terminal
 5. Type `shotgun` into terminal and navigate to the localhost url that it provides
-3. Type `shotgun` into terminal and navigate to the localhost url that it provides
 
 ## Usage
 
