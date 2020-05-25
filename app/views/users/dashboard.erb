@@ -18,8 +18,9 @@
                </div>
             <%end%>
          <%end%>
-
-      <%if !@missing_certs%>
+      <%if @staff.empty? && @roster.empty? %>
+         <div class="alert alert-success" role="alert">Get started by adding a child or employee.</div>
+      <%elsif !@missing_certs%>
          <div class="alert alert-success" role="alert">Everything is good! 🎉</div>
       <%end%>
       </div>
@@ -28,37 +29,37 @@
    <div class="row">
 
       <div class="col text-center">
-      <%if !@roster.empty?%>
          <h5>Roster</h5>
-            <%@roster.each do |r|%>
+            <%if !@roster.empty?%>
+               <%@roster.each do |r|%>
                   <div class="row">
                      <div class="col">
                         <a href="/children/<%=r.id%>"><%=r.last_name.capitalize%>, <%=r.first_name.capitalize%></a>
                      </div>
                   </div>
+               <%end%>
+            <%else%>
+            <div class="col text-center">
+               <a href="/children/new"><button class="btn btn-primary">Add Child</button></a>
+            </div>
             <%end%>
-         <%else%>
-         <div class="col text-center">
-            <a href="/children/new"><button class="btn btn-primary">Add Child</button></a>
-         </div>
-         <%end%>
-         </div>
+      </div>
 
       <div class="col text-center">
-      <%if !@staff.empty?%>
          <h5>Staff</h5>
-            <%@staff.each do |s|%>
+            <%if !@staff.empty?%>
+               <%@staff.each do |s|%>
                   <div class="row">
                      <div class="col">
                         <a href="/employees/<%=s.id%>"><%=s.last_name.capitalize%>, <%=s.first_name.capitalize%></a>
                      </div>
                   </div>
+               <%end%>
+            <%else%>
+               <div class="col text-center">
+                  <a href="/employees/new"><button class="btn btn-primary">Add Employee</button></a>
+               </div>      
             <%end%>
-         <%else%>
-            <div class="col text-center">
-               <a href="/employees/new"><button class="btn btn-primary">Add Employee</button></a>
-            </div>      
-         <%end%>
          </div>
    </div>
 
