@@ -26,27 +26,40 @@
    </div>
 
    <div class="row">
+
+      <div class="col text-center">
       <%if !@roster.empty?%>
-      <div class="col text-center">Roster
-         <%@roster.each do |r|%>
-               <div class="row">
-                  <div class="col">
-                     <a href="/children/<%=r.id%>"><%=r.last_name.capitalize%>, <%=r.first_name.capitalize%></a>
+         <h5>Roster</h5>
+            <%@roster.each do |r|%>
+                  <div class="row">
+                     <div class="col">
+                        <a href="/children/<%=r.id%>"><%=r.last_name.capitalize%>, <%=r.first_name.capitalize%></a>
+                     </div>
                   </div>
-               </div>
+            <%end%>
+         <%else%>
+         <div class="col text-center">
+            <a href="/children/new"><button class="btn btn-primary">Add Child</button></a>
+         </div>
          <%end%>
-      <%end%>
-      </div>
+         </div>
+
+      <div class="col text-center">
       <%if !@staff.empty?%>
-      <div class="col text-center">Staff
-         <%@staff.each do |s|%>
-               <div class="row">
-                  <div class="col">
-                     <a href="/employees/<%=s.id%>"><%=s.last_name.capitalize%>, <%=s.first_name.capitalize%></a>
+         <h5>Staff</h5>
+            <%@staff.each do |s|%>
+                  <div class="row">
+                     <div class="col">
+                        <a href="/employees/<%=s.id%>"><%=s.last_name.capitalize%>, <%=s.first_name.capitalize%></a>
+                     </div>
                   </div>
-               </div>
+            <%end%>
+         <%else%>
+            <div class="col text-center">
+               <a href="/employees/new"><button class="btn btn-primary">Add Employee</button></a>
+            </div>      
          <%end%>
-      <%end%>
-      </div>
+         </div>
    </div>
+
 </div>

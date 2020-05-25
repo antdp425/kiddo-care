@@ -16,7 +16,7 @@ Specs:
    - Child belongs_to User
    - Employee belongs_to User
 - [x] Include user accounts with unique login attribute (username or email)
-   - Email must be unique
+   - Username must be unique
 - [x] Ensure that the belongs_to resource has routes for Creating, Reading, Updating and Destroying
 - [x] Ensure that users can't modify content created by other users
 - [x] Include user input validations
