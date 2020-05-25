@@ -31,7 +31,7 @@
          <%@roster.each do |r|%>
                <div class="row">
                   <div class="col">
-                     <a href="/children/<%=r.id%>"><%=r.last_name.capitalize%>,<%=r.first_name.capitalize%></a>
+                     <a href="/children/<%=r.id%>"><%=r.last_name.capitalize%>, <%=r.first_name.capitalize%></a>
                   </div>
                </div>
          <%end%>
@@ -42,7 +42,7 @@
          <%@staff.each do |s|%>
                <div class="row">
                   <div class="col">
-                     <a href="/employees/<%=s.id%>"><%=s.last_name.capitalize%>,<%=s.first_name.capitalize%></a>
+                     <a href="/employees/<%=s.id%>"><%=s.last_name.capitalize%>, <%=s.first_name.capitalize%></a>
                   </div>
                </div>
          <%end%>
