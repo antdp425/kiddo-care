@@ -14,9 +14,9 @@ Kiddo Care is a Childcare Management Solution built on Sinatra that allows you t
 
 You will be greeted with a welcome page, where you can choose to sign up or log in.
 
-Once signed up and logged in you will land on your dashboard where you will be able to see a roster of all of your children as well as your employees.
+Once signed up and/or logged in you will land on your dashboard where you will be able to see a roster of all of your children as well as your employees.
 
-At this time the app only allows you to add/edit/delete children and employees.
+At this time the app only allows you to add/edit/delete children and employees, as well as view information about them.
 
 Stay tuned for updates and new features in the near future.
 
@@ -27,8 +27,8 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/antdp4
 
 ## License
 
-The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+The app is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
 
 ## Code of Conduct
 
-Everyone interacting in the PremierLeagueExplorer project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/antdp425/kiddo-care/blob/master/CODE_OF_CONDUCT.md).
+Everyone interacting in the Kiddo-care project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/antdp425/kiddo-care/blob/master/CODE_OF_CONDUCT.md).
