@@ -8,7 +8,12 @@
 </div>
 <br>
 
-<%current_user.children.order("last_name ASC").each do |child|%>
+<form method="GET" action="/children/search">
+   <input type="text" name="query">
+   <input type="submit">
+</form>
+
+<%@children.each do |child|%>
 <div class="row index-row">
    <div class="col-3 align-self-center">
       <a href="/children/<%=child.id%>">

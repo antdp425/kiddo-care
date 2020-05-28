@@ -2,6 +2,7 @@ class ChildrenController < ApplicationController
 
    get '/children' do
       if logged_in?
+         @children = current_user.children.order("last_name ASC")
          erb :'children/index'
       else
          redirect '/'
@@ -11,6 +12,15 @@ class ChildrenController < ApplicationController
    get '/children/new' do
       if logged_in?
          erb :'children/new'
+      else
+         redirect '/'
+      end
+   end
+   
+   get '/children/search' do
+      if logged_in?
+         @children = current_user.children.where("first_name LIKE ?", "%#{params[:query]}%")
+         erb :'children/index'
       else
          redirect '/'
       end
